@@ -33,11 +33,17 @@ Endpoints
 ---------
 
 POST /api/BookDetailsApi/initialize-sample-data: Initializes sample book data if none exists.
+
 GET /api/BookDetailsApi/sorted-by-publisher: Retrieves books sorted by Publisher, Author, and Title.
+
 GET /api/BookDetailsApi/sorted-by-author: Retrieves books sorted by Author and Title.
+
 GET /api/BookDetailsApi/sorted-by-publisher-with-stored-procedure: Retrieves books sorted by Publisher using a stored procedure.
+
 GET /api/BookDetailsApi/sorted-by-author-with-stored-procedure: Retrieves books sorted by Author using a stored procedure.
+
 GET /api/BookDetailsApi/total-price: Retrieves the total price of all books in the database.
+
 POST /api/BookDetailsApi/save-list: Saves a list of books to the database.
 
 
