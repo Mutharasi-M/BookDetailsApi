@@ -165,5 +165,3 @@ Citation Generation
 -------------------
 
 The MLACitation and ChicagoCitation properties in the BookDetail model generate citations in MLA and Chicago styles, respectively, based on the book details.
-
-The MLACitation and ChicagoCitation properties in the BookDetail model generate citations in MLA and Chicago styles, respectively, based on the book details.
