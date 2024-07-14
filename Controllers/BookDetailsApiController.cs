@@ -59,6 +59,34 @@ namespace BookDetailsApi.Controllers
             return Ok("Sample data already exists.");
         }
 
+        [HttpGet("Get-All-Books")]
+        public async Task<IActionResult> GeAllBooks()
+        {
+            var books = await _bookRepository.GetAllBookDetailsAsync();
+
+             return Ok(books);
+        }
+
+        [HttpPost("save-books")]
+        public async Task<IActionResult> SaveBooks([FromBody] IEnumerable<BookDetail> books)
+        {
+            await _bookRepository.SaveBooksAsync(books);
+            return Ok();
+        }
+
+        [HttpPut("update-books")]
+        public async Task<IActionResult> UpdateBooks([FromBody] IEnumerable<BookDetail> books)
+        {
+            await _bookRepository.UpdateBooksAsync(books);
+            return Ok();
+        }
+        
+        [HttpDelete("delete-books")]
+        public async Task<IActionResult> DeleteBooks([FromBody] IList<int> ids)
+        {
+            await _bookRepository.DeleteBooksAsync(ids);
+            return Ok();
+        }
 
         [HttpGet("sorted-by-publisher")]
         public async Task<IActionResult> GetBooksSortedByPublisher()
@@ -95,11 +123,5 @@ namespace BookDetailsApi.Controllers
             return Ok(totalPrice);
         }
 
-        [HttpPost("save-list")]
-        public async Task<IActionResult> SaveBooks([FromBody] IEnumerable<BookDetail> books)
-        {
-            await _bookRepository.SaveBooksAsync(books);
-            return Ok();
-        }
     }
 }
